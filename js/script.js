@@ -7,26 +7,31 @@ import {
     addNewCategory
 } from './functional.js'
 
-loadCategories()
+if (localStorage.getItem('categories') === null) {
+    saveCategories()
+}
 
-document.querySelector('.main__inner').addEventListener('click', (e) => {
+const mainInner = document.querySelector('.main__inner')
+
+mainInner.addEventListener('click', (e) => {
     let targetClass = e.target.classList
-    
+
     if (targetClass.contains('checkbox__input') || targetClass.contains('checkbox__custom')) {
         saveCategories()
     }
 })
 
-document.querySelector('.main__inner').addEventListener('keypress', async (e) => {
+mainInner.addEventListener('keypress', async (e) => {
     let categoryId = await e.target.id.replace(/^\D+/g, '')
     let input = document.querySelector(`#category-input-${categoryId}`)
-    let taslName = await input.value
+    let taskName = await input.value
 
-    if (e.key === 'Enter' && taslName != '') {
-        addNewTask(categoryId, taslName, false)
+    if (e.key === 'Enter' && taskName != '') {
+        addNewTask(categoryId, taskName, false)
         countTasksInCategory(categoryId)
         input.value = ''
         saveCategories()
+        console.log('yes');
     }
 });
 
@@ -42,5 +47,5 @@ document.querySelector('#category-add-input').addEventListener('keypress', async
     }
 })
 
-saveCategories()
+loadCategories()
 countTasks()

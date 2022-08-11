@@ -3,8 +3,12 @@ export const generateRandomId = () => {
 }
 
 export const countTasksInCategory = (categoryId) => {
+    console.log('yeas');
     const category = document.querySelector(`#category-${categoryId}`)
+    console.log(`#category-${categoryId}`);
     let counter = category.querySelectorAll('#task').length
+    console.log(category);
+    console.log(counter);
     category.querySelector('#counter').textContent = counter;
 }
 
@@ -19,7 +23,7 @@ export const countTasks = () => {
 
 export const addNewTask = (categoryId, taskText, isChecked) => {
     const taskPattern = `
-        <li class="list__item">
+        <li class="list__item" id="task">
             <label class="checkbox">
                 <input class="checkbox__input" type="checkbox" ${isChecked ? "checked" : ""}>
                 <span class="checkbox__custom"></span>
@@ -56,7 +60,7 @@ export const addNewCategory = (categoryName) => {
             </ul>
         </details>
     `
-    
+
     document.querySelector(`.main__inner`).insertAdjacentHTML('beforeend', categoryPattern)
     return id
 }
