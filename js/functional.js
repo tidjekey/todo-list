@@ -14,7 +14,7 @@ export const countTasks = () => {
     lists.forEach((el) => {
         let counter = el.querySelectorAll('li').length - 1
         el.querySelector('#counter').textContent = counter;
-    })    
+    })
 }
 
 export const addNewTask = (categoryId, taskText, isChecked) => {
@@ -29,7 +29,7 @@ export const addNewTask = (categoryId, taskText, isChecked) => {
     `
 
     document.querySelector(`#category-${categoryId}`).querySelector('#task-input')
-    .insertAdjacentHTML('beforebegin', taskPattern)
+        .insertAdjacentHTML('beforebegin', taskPattern)
 }
 
 export const addNewCategory = (categoryName) => {
@@ -56,17 +56,17 @@ export const addNewCategory = (categoryName) => {
             </ul>
         </details>
     `
+    
     document.querySelector(`.main__inner`).insertAdjacentHTML('beforeend', categoryPattern)
     return id
 }
 
 export const saveCategories = () => {
-
     let categories = []
 
     document.querySelectorAll('.details').forEach((el) => {
         let category = {}
-        category.categoryId = el.id.replace( /^\D+/g, '')
+        category.categoryId = el.id.replace(/^\D+/g, '')
         category.categoryName = el.querySelector('.main__category-name').textContent
         category.tasks = []
 
@@ -77,24 +77,18 @@ export const saveCategories = () => {
                 isChecked: item.querySelector('.checkbox__input').checked ? true : false
             })
         })
-
-        console.log(category.tasks);
-        
         categories.push(category)
-    }) 
-
-    console.log(categories);
-
+    })
     localStorage.setItem('categories', JSON.stringify(categories))
 }
 
 export const loadCategories = () => {
     document.querySelectorAll('.details').forEach(e => e.remove());
-    
+
     let categories = JSON.parse(localStorage.getItem('categories'))
 
     categories.forEach((el) => {
-        console.log(el);
+
         const categoryPattern = `
         <details class="details main__category" id="category-${el.categoryId}">
             <summary class="summary main__category-title">
@@ -106,15 +100,16 @@ export const loadCategories = () => {
                 <span class="details__counter" id="counter"></span>
             </summary>
             <ul class="list">
-                ${el.tasks.map((task) => {return `
-                        <li class="list__item">
-                            <label class="checkbox">
-                                <input class="checkbox__input" type="checkbox" ${task.isChecked ? "checked" : ""}>
-                                <span class="checkbox__custom"></span>
-                                <span class="checkbox__text">${task.task}</span>
-                            </label>
-                        </li>`
-                    }).join('')}
+                ${el.tasks.map((task) => {
+                    return `
+                            <li class="list__item">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" ${task.isChecked ? "checked" : ""}>
+                                    <span class="checkbox__custom"></span>
+                                    <span class="checkbox__text">${task.task}</span>
+                                </label>
+                            </li>`
+                }).join('')}
                 <li class="list__item" id="task-input">
                     <label class="checkbox">
                         <input class="checkbox__input" type="checkbox" disabled="disabled">
@@ -123,8 +118,8 @@ export const loadCategories = () => {
                     </label>
                 </li>
             </ul>
-        </details>
-        `
+        </details>`
+
         document.querySelector('.main__inner').insertAdjacentHTML('beforeend', categoryPattern)
     })
 }
