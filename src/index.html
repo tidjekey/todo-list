@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>TODO List</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <img class="header__logo" src="assets/logo.png" alt="logo">
+                    <h1 class="header__title">#MySweetTodoApp</h1>
+                </div>
+            </div>
+        </header>
+        
+        <main class="main">
+            <div class="container">
+                <div class="main__inner">
+                    <img class="main__decoration" src="assets/decoration.png" onerror="this.style.visibility = 'hidden'">
+                    <details class="details main__category" id="category-0">
+                        <summary class="summary main__category-title">
+                            <div>
+                                <img class="summary__icon" src="assets/dir_icon.svg" onerror="this.style.visibility = 'hidden'">
+                                <span class="main__category-name">Productivity</span>
+                            </div>
+                            <hr class="summary__hr">
+                            <span class="details__counter" id="counter"></span>
+                        </summary>
+                        <ul class="list">
+                            <li class="list__item" id="task">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__custom"></span>
+                                    <span class="checkbox__text">Work on the landing page</span>
+                                </label>
+                            </li>
+                            <li class="list__item" id="task">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__custom"></span>
+                                    <span class="checkbox__text">Buy food</span>
+                                </label>
+                            </li>
+                            <li class="list__item" id="task">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" checked>
+                                    <span class="checkbox__custom"></span>
+                                    <span class="checkbox__text">design a banner</span>
+                                </label>
+                            </li>
+                            <li class="list__item" id="task-input">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" disabled="disabled">
+                                    <span class="checkbox__custom"></span>
+                                    <input class="input" id="category-input-0" type="text" placeholder="Write a task..." autocomplete="off">
+                                </label>
+                            </li>
+                        </ul>
+                    </details>
+                    <details class="details main__category" id="category-1">
+                        <summary class="summary main__category-title">
+                            <div>
+                                <img class="summary__icon" src="assets/dir_icon.svg" onerror="this.style.visibility = 'hidden'">
+                                <span class="main__category-name">Assignments</span>
+                            </div>
+                            <hr class="summary__hr">
+                            <span class="details__counter" id="counter"></span>
+                        </summary>
+                        <ul class="list">
+                            <li class="list__item" id="task">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__custom"></span>
+                                    <span class="checkbox__text">Est eu imperdiet tristique viverra neque diam penatibus.</span>
+                                </label>
+                            </li>
+                            <li class="list__item" id="task">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__custom"></span>
+                                    <span class="checkbox__text">Wst eu ue ds.</span>
+                                </label>
+                            </li>
+                            <li class="list__item" id="task">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__custom"></span>
+                                    <span class="checkbox__text">Wst eu ue ds2.</span>
+                                </label>
+                            </li>
+                            <li class="list__item" id="task">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__custom"></span>
+                                    <span class="checkbox__text">Wst eu ue ds3.</span>
+                                </label>
+                            </li>
+                            <li class="list__item" id="task">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__custom"></span>
+                                    <span class="checkbox__text">Wst eu ue ds4.</span>
+                                </label>
+                            </li>
+                            <li class="list__item" id="task">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__custom"></span>
+                                    <span class="checkbox__text">Wst eu ue ds4.</span>
+                                </label>
+                            </li>
+                            <li class="list__item" id="task-input">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" disabled="disabled">
+                                    <span class="checkbox__custom"></span>
+                                    <input class="input" id="category-input-1" type="text" placeholder="Write a task..." autocomplete="off">
+                                </label>
+                            </li>
+                        </ul>
+                    </details>
+                    <details class="details main__category" id="category-2">
+                        <summary class="summary main__category-title">
+                            <div>
+                                <img class="summary__icon" src="assets/dir_icon.svg" onerror="this.style.visibility = 'hidden'">
+                                <span class="main__category-name">Work</span>
+                            </div>
+                            <hr class="summary__hr">
+                            <span class="details__counter" id="counter"></span>
+                        </summary>
+                        <ul class="list">
+                            <li class="list__item" id="task">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" checked>
+                                    <span class="checkbox__custom"></span>
+                                    <span class="checkbox__text">Est eu imperdiet tristique viverra neque diam penatibus.</span>
+                                </label>
+                            </li>
+                            <li class="list__item" id="task">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__custom"></span>
+                                    <span class="checkbox__text">Wst eu ue ds.</span>
+                                </label>
+                            </li>
+                            <li class="list__item" id="task-input">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" disabled="disabled">
+                                    <span class="checkbox__custom"></span>
+                                    <input class="input" id="category-input-2" type="text" placeholder="Write a task..." autocomplete="off">
+                                </label>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="main__footer">
+                    <input class="input" id="category-add-input" type="text" placeholder="Write a category name..." autocomplete="off">
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <p>Created by tidjekey</p>
+                    <p>GitHub: <a href="https://github.com/tidjekey">github.com/tidjekey</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+    <script src="/js/script.js" type="module"></script>
+
+</html>
